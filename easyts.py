@@ -5,23 +5,23 @@ import sys
 import argparse
 import datetime
 
-import lib.tasks
-import lib.entries
-import lib.entry
+import easyts.tasks
+import easyts.entries
+import easyts.entry
 
 
 def handle_tasks(task_args):
-    lib.tasks.get_tasks(task_args.api_key)
+    easyts.tasks.get_tasks(task_args.api_key)
 
 
 def handle_list(list_args):
-    lib.entries.send_request(list_args.api_key,
+    easyts.entries.send_request(list_args.api_key,
                              list_args.start,
                              list_args.end)
 
 
 def handle_entry(entry_args):
-    lib.entry.add_time_entries(entry_args.api_key,
+    easyts.entry.add_time_entries(entry_args.api_key,
                                entry_args.days,
                                entry_args.minutes,
                                entry_args.task,
