@@ -2,7 +2,7 @@ import requests
 import json
 import datetime
 
-import easyts.user
+from . import user
 
 
 def pretty_print_entry(entry):
@@ -38,7 +38,7 @@ def parse_entries(data):
 
 
 def send_request(api_key, start, end):
-    user_id = easyts.user.get_user_id(api_key)
+    user_id = user.get_user_id(api_key)
 
     try:
         response = requests.get(

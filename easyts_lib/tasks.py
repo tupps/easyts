@@ -1,7 +1,7 @@
 import requests
 import json
 
-import easyts.clients
+from . import clients
 
 
 def extract_task_info(task):
@@ -25,8 +25,8 @@ def available_projects(tasks):
     return result
 
 
-def pretty_print_tasks(clients, tasks):
-    for client in clients:
+def pretty_print_tasks(my_clients, tasks):
+    for client in my_clients:
         print("===== {client_name} =====".format(
             client_name=client['name']
         ))
@@ -69,8 +69,8 @@ def download_tasks(api_key):
 
 def get_tasks(api_key):
     tasks = download_tasks(api_key)
-    clients = easyts.clients.get_clients(api_key)
-    pretty_print_tasks(clients, tasks)
+    my_client = clients.get_clients(api_key)
+    pretty_print_tasks(my_client, tasks)
 
 
 def get_project_id_for_task(api_key, task_id):

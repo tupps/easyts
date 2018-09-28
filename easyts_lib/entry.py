@@ -1,8 +1,8 @@
 import requests
 import json
 
-import easyts.user
-import easyts.tasks
+from . import user
+from . import tasks
 
 
 def send_request(api_key, date, minutes, task_id, comment, user_id, project_id):
@@ -50,10 +50,10 @@ def add_time_entries(api_key, dates, minutes, task_id, comment):
         dates=dates
     ))
     print('Getting User Id...')
-    user_id = easyts.user.get_user_id(api_key)
+    user_id = user.get_user_id(api_key)
     print('User Id {user_id}'.format(user_id=user_id))
     print('Getting project id')
-    project_id = easyts.tasks.get_project_id_for_task(api_key, task_id)
+    project_id = tasks.get_project_id_for_task(api_key, task_id)
     print('Getting project id: {project_id}'.format(project_id=project_id))
 
     for date in dates:
