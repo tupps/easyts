@@ -39,7 +39,7 @@ Export your api_key as a variable so you don't have to include it on the command
 
 Automatically add timesheet entries for this week (MacOS example, on linux substitute date for gdate):
 
-``./easyts.py entry --task 123456789 --days `gdate -dmonday +%Y-%m-%d` `gdate -dtuesday +%Y-%m-%d` `gdate -dwednesday +%Y-%m-%d` `gdate -dthursday +%Y-%m-%d` `gdate -dfriday +%Y-%m-%d` ``
+``./easyts.py entry --task 123456789 --days `gdate -d'last monday' +%Y-%m-%d` `gdate -d'last tuesday' +%Y-%m-%d` `gdate -d'last wednesday' +%Y-%m-%d` `gdate -d'last thursday' +%Y-%m-%d` `gdate -dfriday +%Y-%m-%d` ``
 
 List all the entries for this month:
 
