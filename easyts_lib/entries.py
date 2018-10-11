@@ -6,8 +6,9 @@ from . import user
 
 
 def pretty_print_entry(entry):
-    print('{day}\t{client_name}\t{project_name}\t{task_name}'.format(
+    print('{day}\t{minutes}\t{client_name}\t{project_name}\t{task_name}'.format(
         day=entry['day'],
+        minutes=entry['minutes'],
         client_name=entry['clientName'],
         project_name=entry['projectName'],
         task_name=entry['taskName']
